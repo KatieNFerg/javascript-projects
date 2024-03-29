@@ -24,9 +24,18 @@ console.log(dnaTwo.replace("GCT", "AGG"));
 
 
 //2) Look for the gene "CAT" with ``indexOf()``. If found print, "CAT gene found", otherwise print, "CAT gene NOT found".
+let dnacat = dnaTwo.includes("CAT");
+if (dnacat == true){
+    console.log("CAT gene found");
+} else {
+    console.log("CAT gene NOT found.");
+}
+
 
 //3) Use .slice() to print out the fifth gene (set of 3 characters) from the DNA strand.
-
+console.log(dnaTwo.indexOf("CGT"));
+console.log(dnaTwo.slice(16,19));
 //4) Use a template literal to print, "The DNA strand is ___ characters long."
-
+console.log(dnaTwo.length);
+console.log(`The DNA strand is ${dnaTwo.length} characters long.`);
 //5) Just for fun, apply methods to ``dna`` and use another template literal to print, 'taco cat'.
