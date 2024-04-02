@@ -29,12 +29,12 @@ let arr1 = [1, 5, 'LC101', 'blue', 42];
   //a. Print each element of the array to a new line.
   //b. Print each character of the string - in reverse order - to a new line. */ 
 
-  //for (let i = 0; i<arr1.length; i++ ) {
-  //console.log(arr1[i]);
-   //for (let j = 0; j<arr1[i].length; j++) {
-  // console.log(arr1[j].reverse());
-//  }  
-// }
+  for (let i = 0; i<arr1.length; i++ ) {
+  console.log(arr1[i]);
+ }  
+for (let i = str1.length-1; i >=0; i--) {
+  console.log(str1[i]);
+}
 
 
 
@@ -47,6 +47,13 @@ let evens = [];
 let odds = [];
 for (let i = 0; i<arr2.length; i++) {
   if (arr2[i] % 2 === 0) {
-  console.log(evens.push(arr2[i]));
+  evens.push(arr2[i]);
   }
 }
+console.log(evens);
+for (let i = 0; i<arr2.length; i++) {
+  if (arr2[i] % 2 === 1 || arr2[i] % 2 === -1) {
+    odds.push(arr2[i]);
+  }
+}
+console.log(odds);
