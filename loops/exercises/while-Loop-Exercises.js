@@ -18,7 +18,7 @@ console.log(startFuelLevel);
 
 //b. Use a second loop to query the user for the number of astronauts (up to a maximum of 7). Validate the entry.
   
-  while (!isNaN(astronautsAboard) || astronautsAboard >= 7) {
+  while (astronautsAboard > 7 || isNaN(astronautsAboard) || astronautsAboard < 1) {
     astronautsAboard = input.question("How many astronauts are aboard?");
   }
   
@@ -28,8 +28,13 @@ while (startFuelLevel-100*astronautsAboard >= 0) {
   altitudeShuttle += 50;
   startFuelLevel -= 100*astronautsAboard;
 }
-
+console.log(`The shuttle gained an altitude of ${altitudeShuttle}km.`);
 
 /*Exercise #5: Output the result with the phrase, “The shuttle gained an altitude of ___ km.”
 
 If the altitude is 2000 km or higher, add “Orbit achieved!” Otherwise add, “Failed to reach orbit.”*/
+if (altitudeShuttle >= 2000){
+  console.log("Orbit achieved!");
+} else {
+  console.log("Failed to reach orbit.");
+}
