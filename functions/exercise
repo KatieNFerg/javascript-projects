@@ -18,6 +18,7 @@ function makeSquare(makeLine) {
         return square;
 }
 console.log(makeSquare(5));
+
 function makeRectangle(width, height) {
     let rectangle = '';
     for(let i = 0; i < height; i++){
@@ -26,11 +27,34 @@ function makeRectangle(width, height) {
     return rectangle.slice(0,-1);
     }
 console.log(makeRectangle(5, 3));
-function makeDownwardStairs(makeLine) {
-    let downwardStairs = '';
-    for(let i = 0; i < makeLine; i++) {
-        downwardStairs += makeLine + '\n'
+
+function makeDownwardStairs(height) {
+    let triangle = '';
+    for(let i = 0; i < height; i++) {
+        triangle += makeLine(i+1) + '\n'
     }
-    return downwardStairs
+    return triangle.slice(0,-1);
 }
 console.log(makeDownwardStairs(5));
+
+function makeSpaceLine(numSpaces, numChars){
+    let spaceLine ='';
+    for(let i = 0; i< numSpaces; i++ ){
+
+    }
+}
+
+function makeIsocelesTriangle(height){
+    let triangle = '';
+    for(let i=0; i<height;i++){
+        traingle += makeSpaceLine(height -i -1, i*2+1) + '\n'
+
+    }
+    return triangle.slice(0,-1);
+}
+
+function makeDiamond(height){
+let triangle = makeIsocelesTriangle(height)
+let bottomHalf = '\n' + triangle.split('').reverse().join('')
+return triangle + bottomHalf;
+}
