@@ -5,8 +5,16 @@ function findMinValue(arr){
       min = arr[i];
     }
   }
+  let finalSort = [];
+  finalSort = arr.map(findMinValue);
+  finalSort.push();
+
+
+
   return min;
 }
+console.log(finalSort);
+
 
 //Create a function with an array of numbers as its parameter. This function will return a new array with the numbers sorted from least to greatest value.
 
