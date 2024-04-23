@@ -42,9 +42,9 @@ window.addEventListener('load', function () {
 
     });
 
-    missionAbort.addEventListener('click', ()=>{
+    missionAbort.addEventListener('click', () => {
         const confirmed = confirm('Confirm that you want to abort the mission.');
-        if(confirmed){
+        if (confirmed) {
             flightStatus.innerHTML = 'Mission aborted.';
             shuttleBackground.style.backgroundColor = 'green';
             spaceShuttleHeight.innerHTML = 0;
@@ -53,30 +53,44 @@ window.addEventListener('load', function () {
         }
     });
 
-    up.addEventListener('click', ()=>{
+    up.addEventListener('click', () => {
         let currentBottom = parseInt(rocket.style.bottom);
+        if(currentBottom < 250){
         currentBottom += 10;
         rocket.style.bottom = currentBottom + 'px';
-        spaceShuttleHeight.innerHTML = parseInt(spaceShuttleHeight.innerHTML) + 10000;
+        }
+        if (spaceShuttleHeight.innerHTML < 250000) {
+
+            spaceShuttleHeight.innerHTML = parseInt(spaceShuttleHeight.innerHTML) + 10000;
+        }
+
     });
 
-    down.addEventListener('click', ()=>{
+    down.addEventListener('click', () => {
         let currentBottom = parseInt(rocket.style.bottom);
+        if(currentBottom >= 0){
         currentBottom -= 10;
-        rocket.style.bottom = currentBottom + 'px'; 
-        spaceShuttleHeight.innerHTML = parseInt(spaceShuttleHeight.innerHTML) - 10000;
+        rocket.style.bottom = currentBottom + 'px';
+        }
+        if (spaceShuttleHeight.innerHTML >= 0) {
+            spaceShuttleHeight.innerHTML = parseInt(spaceShuttleHeight.innerHTML) - 10000;
+        }
     });
 
-    right.addEventListener('click', ()=>{
+    right.addEventListener('click', () => {
         let currentLeft = parseInt(rocket.style.left);
+        if(currentLeft <= 440){
         currentLeft += 10;
         rocket.style.left = currentLeft + 'px';
+        }
     })
 
-    left.addEventListener('click', ()=>{
+    left.addEventListener('click', () => {
         let currentLeft = parseInt(rocket.style.left);
+        if(currentLeft > -20){
         currentLeft -= 10;
         rocket.style.left = currentLeft + 'px';
+        }
     })
 
 
